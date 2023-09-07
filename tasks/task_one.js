@@ -8,11 +8,10 @@ document.body.appendChild(cryptoDataElement);
 const { id, rank, name, symbol, priceUsd } = asset;
 
 const cryptoElements = _.map(assets, (asset) => {
-  const { id, rank, name, symbol, priceUsd } = asset;
   return `<p>${rank}. ${name} (${symbol}): $${priceUsd}</p>`;
 });
 
-_.each(cryptoElements, (element) => {
+_.each([cryptoElements], (element) => {
   document.body.appendChild(element);
 });
 
