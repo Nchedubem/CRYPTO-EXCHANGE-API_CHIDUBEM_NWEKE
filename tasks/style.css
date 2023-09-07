@@ -1,44 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  #cryptoData {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  #cryptoData div {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+/* styles.css */
+
+#crypto-data {
+    margin: 20px 0;
     padding: 20px;
-    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  #cryptoData div p {
+  #crypto-data h2 {
+    font-size: 18px;
     margin-bottom: 10px;
   }
   
-  #cryptoData div span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+  #crypto-data ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   
-  #cryptoData div p i {
+  #crypto-data li {
+    margin-bottom: 10px;
+  }
+  
+  #crypto-data span {
+    font-weight: bold;
+    color: #666;
+  }
+  
+  #crypto-data .price {
+    font-size: 16px;
+    color: #666;
+    margin-right: 10px;
+  }
+  
+  #crypto-data .change {
     font-size: 14px;
     color: #999;
+    margin-left: 10px;
+  }
+  
+  #crypto-data .arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+  
+  #crypto-data .arrow.up {
+    transform: rotate(45deg);
+  }
+  
+  #crypto-data .arrow.down {
+    transform: rotate(-45deg);
   }
