@@ -1,42 +1,26 @@
-const cryptoElement = document.createElement('div');
-cryptoElement.innerHTML = `${rank}. ${name} (${symbol}): $${priceUsd}`;
+fetch('https://api.coincap.io/v2/assets')
+  .then(response => response.json())
+  .then(data => {
+    const assets = data.data.slice(0, 5);
 
-const cryptoDataElement = document.createElement('div');
-cryptoDataElement.id = 'cryptoData';
-document.body.appendChild(cryptoDataElement);
+    const cryptoElements = assets.map((asset) => {
+      const rank = asset.rank;
+      const name = asset.name;
+      const symbol = asset.symbol;
+      const priceUsd = asset.price_usd;
 
-const { id, rank, name, symbol, priceUsd } = asset;
+      const cryptoElement = document.createElement('div');
+      cryptoElement.innerHTML = `${rank}. ${name} (${symbol}): $${priceUsd}`;
 
-const cryptoElements = _.map(assets, (asset) => {
-  return `<p>${rank}. ${name} (${symbol}): $${priceUsd}</p>`;
-});
-
-_.each([cryptoElements], (element) => {
-  document.body.appendChild(element);
-});
-
-
-try {
-  fetch('https://api.coincap.io/v2/assets')
-    .then(response => response.json())
-    .then(data => {
-      const assets = data.data.slice(0, 5);
-
-      const cryptoDataElement = document.getElementById('cryptoData');
-      assets.forEach((asset) => {
-        const { id, rank, name, symbol, priceUsd } = asset;
-
-        const cryptoElement = document.createElement('div');
-        cryptoElement.innerHTML = `${rank}. ${name} (${symbol}): $${priceUsd}`;
-
-        cryptoDataElement.appendChild(cryptoElement);
-      });
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      alert('An error occurred while retrieving crypto data. Please try again later.');
+      return cryptoElement;
     });
-} catch (error) {
-  console.error('Error:', error);
-  alert('An error occurred while retrieving crypto data. Please try again later.');
-}
+
+    const cryptoDataElement = document.getElementById('cryptoData');
+    cryptoElements.forEach((element) => {
+      cryptoDataElement.appendChild(element);
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+    alert('An error occurred while retrieving crypto data. Please try again later.');
+  });
