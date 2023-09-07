@@ -19,31 +19,5 @@ Make sure to update this README.md file with the usual as in the HTML/CSS Module
 Feel free to create a file(s) as the need arises.
 Remember to add okechukwupromise638@gmail.com to review
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Crypto Exchange API</title>
-</head>
-<body>
-<h1>Crypto Exchange API</h1>
-<p>This API allows you to get information about cryptocurrencies, such as their prices, market capitalization, and trading volume.</p>
-<p>To use the API, you will need to get an API key from the exchange.</p>
-<p>Once you have an API key, you can use it to make requests to the API.</p>
-<p>For example, the following request will get the price of Bitcoin:</p>
-<pre>
-https://api.exchange.com/v1/prices/BTCUSD
-</pre>
-<p>The response to this request will be a JSON object with the following properties:</p>
-<ul>
-<li>price: The current price of Bitcoin in USD</li>
-<li>high: The highest price of Bitcoin in USD in the last 24 hours</li>
-<li>low: The lowest price of Bitcoin in USD in the last 24 hours</li>
-<li>volume: The total trading volume of Bitcoin in USD in the last 24 hours</li>
-</ul>
-<p>For more information about the API, please see the documentation:</p>
-<p>https://docs.exchange.com/api</p>
-</body>
-</html>
-Use code with caution. Learn more
 
-
+// Write something
