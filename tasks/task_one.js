@@ -1,7 +1,7 @@
 fetch('https://api.coincap.io/v2/assets')
   .then(response => response.json())
   .then(data => {
-    const assets = data.data.slice(0, 5);
+    const assets = data.data.slice(0, 12);
 
     const cryptoElements = assets.map((asset) => {
       const rank = asset.rank;
